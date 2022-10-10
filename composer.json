@@ -36,5 +36,8 @@
     "require-dev": {
         "phpunit/phpunit": "^9",
         "orchestra/testbench": "^7.9"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
