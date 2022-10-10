@@ -19,9 +19,6 @@
         }
     ],
     "extra": {
-        "branch-alias": {
-            "dev-master": "3.6-dev"
-        },
         "laravel": {
             "providers": [
                 "ZenCoreSpA\\Authentication\\ServiceProvider"
