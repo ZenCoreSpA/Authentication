@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Enviroment Setup
-        run: php -r "file_exists('phpunit.xml.dist.dist') || copy('phpunit.xml.dist.dist', 'phpunit.xml.dist');"
+        run: php -r "file_exists('phpunit.xml.dist') || copy('phpunit.xml.dist', 'phpunit.xml');"
 
       - name: Install Dependencies
         run: |
