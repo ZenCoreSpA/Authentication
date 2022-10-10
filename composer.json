@@ -1,0 +1,40 @@
+{
+    "name": "zencorespa/authentication",
+    "description": "Package to provide authentication",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ZenCoreSpA\\Authentication\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZenCoreSpA\\Authentication\\Tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ian Torres",
+            "email": "iantorres@outlook.com"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.6-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ZenCoreSpA\\Authentication\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/routing": "^9",
+        "illuminate/session": "^9",
+        "illuminate/support": "^9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "orchestra/testbench": "^7.9"
+    }
+}
