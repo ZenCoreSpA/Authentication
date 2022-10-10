@@ -1,0 +1,42 @@
+name: "Tests"
+
+on: [ push ]
+
+jobs:
+
+  php:
+    name: "PHP"
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: MySQL Preparations
+        run: sudo service mysql stop
+
+      - name: Setup MySQL
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql version: "8.0"
+          mysql root password: "secret"
+          mysql database: "app"
+
+      - name: Test MySQL
+        run: |
+          while ! mysqladmin ping --host=127.0.0.1 --password=test --silent; do
+            sleep 1
+          done
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          composer require "laravel/framework:9.*" --no-interaction --no-update
+          composer update --prefer-stable --prefer-dist --no-progress
+
+      - name: Run Unit Tests
+        run: composer test
