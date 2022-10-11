@@ -3,11 +3,23 @@
 namespace ZenCoreSpA\Authentication\Tests;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithContainer;
 use Illuminate\Routing\Router;
 use ZenCoreSpA\Authentication\ServiceProvider;
+use ZenCoreSpA\UI\ServiceProvider as UIServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
+    use InteractsWithConsole, InteractsWithContainer;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->loadLaravelMigrations(['--database' => 'tests']);
+        $this->artisan('migrate', ['--database' => 'tests'])->run();
+    }
+
     /**
      * Get package providers.
      *
@@ -18,6 +30,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
+            UIServiceProvider::class,
             ServiceProvider::class
         ];
     }
@@ -47,5 +60,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         /** @var Router $router */
         $router = $app['router'];
+
+        $app['config']->set('database.default', 'tests');
+        $app['config']->set('database.connections.tests', [
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
+        ]);
     }
 }

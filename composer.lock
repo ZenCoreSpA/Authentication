@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdd6090cff07efa3b1b418d95c677cff",
+    "content-hash": "521b26ebbd6b52143b679c0bc88b31bb",
     "packages": [
         {
             "name": "brick/math",
@@ -4560,6 +4560,60 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "zencorespa/ui",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ZenCoreSpA/UI.git",
+                "reference": "3d967c5d8012ca8e626bce51803b99cb429c28e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZenCoreSpA/UI/zipball/3d967c5d8012ca8e626bce51803b99cb429c28e2",
+                "reference": "3d967c5d8012ca8e626bce51803b99cb429c28e2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "^9",
+                "illuminate/session": "^9",
+                "illuminate/support": "^9",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.9",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ZenCoreSpA\\Authentication\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZenCoreSpA\\UI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ian Torres",
+                    "email": "iantorres@outlook.com"
+                }
+            ],
+            "description": "Package to provide UI",
+            "support": {
+                "issues": "https://github.com/ZenCoreSpA/UI/issues",
+                "source": "https://github.com/ZenCoreSpA/UI/tree/v0.0.1"
+            },
+            "time": "2022-10-10T23:48:46+00:00"
         }
     ],
     "packages-dev": [
@@ -7668,7 +7722,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^8.1"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }
