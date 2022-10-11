@@ -1,6 +1,6 @@
 <?php
 
-namespace ZenCoreSpA\Authentication\Http\Requests\Dashboard;
+namespace ZenCoreSpA\Authentication\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;

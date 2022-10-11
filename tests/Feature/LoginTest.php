@@ -41,6 +41,6 @@ class LoginTest extends TestCase
         ])
             ->assertStatus(302)
             ->assertRedirect(route('auth.login'))
-            ->assertSessionHas('message', __('Unauthorized'));
+            ->assertSessionHas('message', __('Unauthenticated'));
     }
 }

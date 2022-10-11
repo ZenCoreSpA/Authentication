@@ -3,7 +3,7 @@
 namespace ZenCoreSpA\Authentication\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
-use ZenCoreSpA\Authentication\Http\Requests\Dashboard\DashboardRequest;
+use ZenCoreSpA\Authentication\Http\Requests\DashboardRequest;
 
 class DashboardController extends Controller
 {

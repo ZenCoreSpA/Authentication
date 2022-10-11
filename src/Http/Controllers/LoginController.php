@@ -27,6 +27,6 @@ class LoginController extends Controller
         }
         return response()
             ->redirectToRoute('auth.login')
-            ->with('message', __('Unauthorized'));
+            ->with('message', __('Unauthenticated'));
     }
 }
